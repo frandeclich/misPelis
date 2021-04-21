@@ -1,13 +1,11 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types'
 
 
-class Movie extends Component{
-    render(props){
-        return(
-                    <li>"{this.props.title}" es una película con un rating de {this.props.rating}, lo que significa que esta película es muy {this.props.rating>6? 'buena':'mala'}.</li>
-        )    
-    }
+function Movie(props){
+    return(
+        <li>"{props.title}" es una película con un rating de {props.rating}, lo que significa que esta película es muy {props.rating>6? 'buena':'mala'}.</li>
+    )    
 }
 Movie.defaultProps ={
     rating: '(?)'
