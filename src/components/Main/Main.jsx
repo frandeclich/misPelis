@@ -25,14 +25,17 @@ class Main extends Component{
             {
                 title:"Alicia en el país de las Maravillas",
                 rating:8,
+                key:1,
             },
             {
                 title:"La momia",
                 rating:4,
+                key:2,
             },
             {
                 title:"El Ángel",
                 rating:6,
+                key:3,
             }
         ]
         return (

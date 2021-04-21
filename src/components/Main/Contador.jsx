@@ -11,6 +11,7 @@ function Contador(props){
     }
     useEffect(()=>{
         document.title = `Viste ${valor} películas.`
+        console.log('Actualizando título...')
     })
     return(
         <div className="contador-container">
