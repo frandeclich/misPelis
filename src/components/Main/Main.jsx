@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Movie from './Movie'
 import Contador from './Contador'
 import Pokemons from './Pokemons'
+import ReactHookForm from './ReactHookForm'
 
 class Main extends Component{
     componentDidMount(){
@@ -41,11 +42,13 @@ class Main extends Component{
         return (
             <div className="main-container">
                 <Pokemons/>
+                <hr/>
                 <h2>Las pelis favoritas de {user.nickName}</h2>
                 <ul>
                     {user.favouriteMovies.map(movie=><li>{movie}</li>)}
                     <br/>
                 </ul>
+                <hr/>
                 <h2>Especificaciones de las películas:</h2>
                 <ul>
                 {movies.map((movie,index)=>
@@ -55,11 +58,15 @@ class Main extends Component{
                         rating ={movie.rating}
                     />)}
                 </ul>
-                
+                <hr/>
                 <h5>{user.formatName()} es un capo.</h5>
+                <hr/>
                 <Contador
                     valor = {0}
                 />
+                <hr/>
+                <ReactHookForm/>
+                <br/>
             </div>
         );
     }
