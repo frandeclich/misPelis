@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
-/* import PropTypes from 'prop-types' */
 
 
-function Pokemons(props){
+function Pokemons(){
     const [api,setApi] = useState([])
     function apiCall(url,handler){
         fetch(url)
@@ -12,12 +11,12 @@ function Pokemons(props){
     }
     function mostrarPokemons(data){
         setApi(data.results)
-        /* console.log(api) */
+        console.log(api)
     }
     useEffect(()=>{
-        /* console.log('Pokemons montado.'); */
+        console.log('Pokemons montado.');
         apiCall('https://pokeapi.co/api/v2/pokemon/',mostrarPokemons)
-    })
+    },[])
     let contenido;
     if (api === []) {
         contenido = <p>Cargando...</p>
