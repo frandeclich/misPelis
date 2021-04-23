@@ -14,6 +14,7 @@ class Main extends Component{
     
     render(){
         const user={
+            key:1,
             firstName:'Francisco',
             lastName:'Declich',
             nickName:'Fran',
@@ -45,15 +46,15 @@ class Main extends Component{
                 <hr/>
                 <h2>Las pelis favoritas de {user.nickName}</h2>
                 <ul>
-                    {user.favouriteMovies.map(movie=><li>{movie}</li>)}
+                    {user.favouriteMovies.map((movie,i)=><li key={i}>{movie}</li>)}
                     <br/>
                 </ul>
                 <hr/>
                 <h2>Especificaciones de las películas:</h2>
                 <ul>
-                {movies.map((movie,index)=>
+                {movies.map((movie)=>
                     <Movie
-                        key = {index}
+                        key = {movie.key}
                         title ={movie.title}
                         rating ={movie.rating}
                     />)}
