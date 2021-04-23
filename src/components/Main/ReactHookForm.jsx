@@ -20,7 +20,8 @@ const ReactHookForm = ()=>{
 
     useEffect(()=>{
         console.log(auto)
-    })
+    },[])
+    
     return(
         <div>
             <h1>REACT HOOK FORM</h1>
@@ -37,8 +38,8 @@ const ReactHookForm = ()=>{
                         <div><span>El campo es requerido.</span><br/></div>
                     )
                 }
-                <select name="color" placeholder="Color"{...register('color',{required:true})}>
-                    <option hidden selected value="">Elegí</option>
+                <select name="color" defaultValue="" placeholder="Color"{...register('color',{required:true})}>
+                    <option hidden value="">Elegí</option>
                     <option value="white">Blanco</option>
                     <option value="red">Rojo</option>
                     <option value="green">Verde</option>
@@ -48,7 +49,7 @@ const ReactHookForm = ()=>{
                         <div><span>El campo es requerido.</span><br/></div>
                     )
                 }
-                <input name="year" placeholder="Año"{...register('year',{required:'El campito es requeridito', minLength: 3/* , pattern: /^[0-9]$/ */})}/> <br/>
+                <input name="year" placeholder="Año"{...register('year',{required:'El campito es requeridito', minLength: 3})}/> <br/>
                 <ErrorMessage errors={errors} name="year" render={({message})=><div><span className="color-rojo">{message}</span><br/></div>}/>
                 <input type="submit" value="ENVIAR"/>
             </form>
