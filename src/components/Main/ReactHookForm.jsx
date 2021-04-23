@@ -20,7 +20,7 @@ const ReactHookForm = ()=>{
 
     useEffect(()=>{
         console.log(auto)
-    },[])
+    },[auto])
     
     return(
         <div>
