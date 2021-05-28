@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {motion} from 'framer-motion'
 
 function Contador(props){
 
@@ -15,7 +16,7 @@ function Contador(props){
     })
     return(
         <div className="contador-container">
-            <h3>Yo vi {valor} películas.</h3>
+            <motion.h3 animate={{x:valor*15}}>Yo vi {valor} películas.</motion.h3>
             <button onClick={()=>incrementar()}>Yo vi más</button>
             <button onClick={()=>decrementar()}>Yo vi menos</button>
         </div>

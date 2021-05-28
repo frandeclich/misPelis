@@ -1,4 +1,5 @@
 import React from 'react';
+import {motion} from 'framer-motion'
 /* import logo from './logo.svg'; */
 
 /* import './App.css'; */
@@ -20,7 +21,7 @@ import{
 function App() {
   return (
     <Router>
-      <div className="App">
+      <motion.div className="App" initial={{opacity:0}} animate={{opacity:1}} transition={{duration:1}}>
         <Switch>
           <Route path="/contador">
             <Categories/>
@@ -37,11 +38,17 @@ function App() {
             <Pokemons/>
           </Route>
           <Route path="/usuarios/:id" component={User}/>
+          <Route path="/movies" exact>
+            <Categories/>
+          </Route>
+          <Route path="/forms" exact>
+            <Categories/>
+          </Route>
           <Route path="/" exact>
             <Categories/>
           </Route>
         </Switch>
-      </div> 
+      </motion.div> 
     </Router>
   );
 }
